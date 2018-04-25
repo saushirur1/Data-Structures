@@ -36,10 +36,15 @@ void hashmap::print()
     cout << v[i]->dateofbirth << endl;
   }
 }
-void hashmap::update()
+void hashmap::update(string& name,string& dateofbirth1)
 {
-  int i=0;
-  v[i]->name="hello";
-  v[i]->dateofbirth="How are you";
-  v[i]->next=nullptr;
+  int index=Create_hash(name);
+  if(v[index]->name=="Null" && v[index]->dateofbirth=="Null")
+  {
+    v[index]->dateofbirth=dateofbirth1;
+  }
+  else
+  {
+    cout << "hello" << endl;
+  }
 }

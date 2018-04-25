@@ -6,10 +6,15 @@ int main()
 {
   hashmap h;
   h.print();
-//  h.update();
-  //h.print();
-  //cout << "testing" << endl;
-  int y =h.Create_hash("hellojww");
-  cout << "hash index:" << y << endl;
+//  h.print();
+  cout << "testing" << endl;
+  cout << "Enter your name" << endl;
+  string name1="";
+  cin >> name1;
+  string dob="";
+  cout << "Enter your dateofbirth" << endl;
+  cin >> dob;
+  h.update(name1,dob);
+  h.print();
   return 0;
 }
