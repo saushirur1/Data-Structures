@@ -69,3 +69,22 @@ void hashmap::update(string& name,string& dateofbirth1)
   current->next=newnode;
   }
 }
+string hashmap::searchdob(string name_tofind)
+{
+  int indextofind=Create_hash(name_tofind);
+  hash* find=v[indextofind];
+  string result="Not found";
+  while(find!=nullptr)
+  {
+  if(find->name==name_tofind)
+  {
+    result=find->dateofbirth;
+    break;
+  }
+  else
+  {
+    find=find->next;
+  }
+  }
+  return result;
+}

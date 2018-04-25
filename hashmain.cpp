@@ -15,9 +15,13 @@ int main()
   cout << "Enter your dateofbirth" << endl;
   cin >> dob;
   h.update(name1,dob);
-  h.update(name1,dob);
-//  h.print();
-int t = h.Create_hash(name1);
-h.helper(t);
+  string new1="ronmak";
+  string new2="10/10/10";
+  h.update(new1,new2);
+//h.print();
+//int t = h.Create_hash(name1);
+//h.helper(t);
+string found=h.searchdob("ronmak");
+cout << found << endl;
   return 0;
 }
