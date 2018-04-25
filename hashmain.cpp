@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "hashmap.h"
+#include <algorithm>
 using namespace std;
 int main()
 {
