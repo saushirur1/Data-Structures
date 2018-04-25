@@ -2,6 +2,7 @@
 #include <vector>
 #include "hashmap.h"
 #include <algorithm>
+#include <utility>
 using namespace std;
 int main()
 {
@@ -16,13 +17,13 @@ int main()
   cout << "Enter your dateofbirth" << endl;
   cin >> dob;
   h.update(name1,dob);
-  string new1="ronmak";
+  string new1="ron";
   string new2="10/10/10";
   h.update(new1,new2);
 //h.print();
 //int t = h.Create_hash(name1);
 //h.helper(t);
-string found=h.searchdob("ronmak");
+string found=h.searchdob("ron");
 cout << found << endl;
   return 0;
 }
