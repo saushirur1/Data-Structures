@@ -4,7 +4,7 @@
 using namespace std;
 hashmap::hashmap()
 {
-this->tablesize=2;
+this->tablesize=10;
 (this->v).reserve(tablesize);
 for(int i=0;i<tablesize;i++)
 {
@@ -17,7 +17,15 @@ for(int i=0;i<tablesize;i++)
 }
 int hashmap::Create_hash(string name)
 {
-return 10;
+cout << name << endl;
+int result=0;
+for(int i=0;i<name.length();i++)
+{
+result=result+(int)(name[i]);
+}
+cout << result << endl;
+result=result%tablesize;
+return result;
 }
 void hashmap::print()
 {
