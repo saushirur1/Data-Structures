@@ -17,13 +17,13 @@ for(int i=0;i<tablesize;i++)
 }
 int hashmap::Create_hash(string name)
 {
-cout << name << endl;
+//cout << name << endl;
 int result=0;
 for(int i=0;i<name.length();i++)
 {
 result=result+(int)(name[i]);
 }
-cout << result << endl;
+//cout << result << endl;
 result=result%tablesize;
 return result;
 }
@@ -36,15 +36,36 @@ void hashmap::print()
     cout << v[i]->dateofbirth << endl;
   }
 }
+void hashmap::helper(int index1)
+{
+  cout << "here in helper" << endl;
+  hash* current1=v[index1];
+  while(current1!=nullptr)
+  {
+  cout << "here in helper loop" << endl;
+  cout << "name: " << current1->name << "dob: " << current1->dateofbirth << endl;
+  current1=current1->next;
+  }
+}
 void hashmap::update(string& name,string& dateofbirth1)
 {
   int index=Create_hash(name);
   if(v[index]->name=="Null" && v[index]->dateofbirth=="Null")
   {
+    v[index]->name=name;
     v[index]->dateofbirth=dateofbirth1;
   }
   else
   {
-    cout << "hello" << endl;
+  hash* current=v[index];
+  while(current->next!=nullptr)
+  {
+    current=current->next;
+  }
+  hash* newnode=new hash;
+  newnode->name=name;
+  newnode->dateofbirth=dateofbirth1;
+  newnode->next=nullptr;
+  current->next=newnode;
   }
 }

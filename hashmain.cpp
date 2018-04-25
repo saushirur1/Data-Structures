@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
   hashmap h;
-  h.print();
+  //h.print();
 //  h.print();
   cout << "testing" << endl;
   cout << "Enter your name" << endl;
@@ -15,6 +15,9 @@ int main()
   cout << "Enter your dateofbirth" << endl;
   cin >> dob;
   h.update(name1,dob);
-  h.print();
+  h.update(name1,dob);
+//  h.print();
+int t = h.Create_hash(name1);
+h.helper(t);
   return 0;
 }

@@ -16,4 +16,5 @@ hashmap();
 int Create_hash(std::string name);
 void print();
 void update(std::string& name,std::string& dateofbirth1);
+void helper(int index1);
 };
