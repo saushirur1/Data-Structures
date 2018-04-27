@@ -90,3 +90,7 @@ string hashmap::searchdob(string name_tofind)
   }
   return result;
 }
+void hashmap::Delete_entry(const string& name_todelete)
+{
+cout << "delete" << endl;
+}
