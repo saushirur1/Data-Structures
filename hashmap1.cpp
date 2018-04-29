@@ -107,6 +107,7 @@ while(current->next!=nullptr)
     hash* temp=current->next;
     current1=temp;
     delete current;
+    cout << "Entry Deleted" << endl;
     return;
   }
   current1=current;
