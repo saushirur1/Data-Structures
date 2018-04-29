@@ -6,7 +6,7 @@
 using namespace std;
 hashmap::hashmap()
 {
-this->tablesize=10;
+this->tablesize=2;
 (this->v).reserve(tablesize);
 for(int i=0;i<tablesize;i++)
 {
@@ -34,8 +34,13 @@ void hashmap::print()
   cout << this->v.size() << endl;
   for(int i=0;i<tablesize;i++)
   {
-    cout << v[i]->name << endl;
-    cout << v[i]->dateofbirth << endl;
+    hash* print1=v[i];
+    while(print1!=nullptr)
+    {
+      cout << print1->name << endl;
+      cout << print1->dateofbirth << endl;
+      print1=print1->next;
+    }
   }
 }
 void hashmap::helper(int index1)
@@ -92,5 +97,19 @@ string hashmap::searchdob(string name_tofind)
 }
 void hashmap::Delete_entry(const string& name_todelete)
 {
-cout << "delete" << endl;
+int indextodelete=Create_hash(name_todelete);
+hash* current=v[indextodelete];
+hash* current1;
+while(current->next!=nullptr)
+{
+  if(current->name==name_todelete)
+  {
+    hash* temp=current->next;
+    current1=temp;
+    delete current;
+    return;
+  }
+  current1=current;
+  current=current->next;
+}
 }
