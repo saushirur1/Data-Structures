@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+#include <vector>
 #include "linkedlist.h"
 using namespace std;
 linkedlist::linkedlist()
@@ -51,6 +53,37 @@ void linkedlist::reverselist()
     current=temp;
   }
   head=prev;
+}
+void linkedlist::delete_atindex(int index)
+{
+  int count=0;
+  current=head;
+  ll* prev;
+  while(current!=nullptr)
+  {
+    if(count==index)
+    {
+      break;
+    }
+    count=count+1;
+    prev=current;
+    current=current->next;
+  }
+  if(current==nullptr)
+  {
+    cout << "Index not present in the list" << endl;
+  }
+  else
+  {
+    ll* temp=current->next;
+    prev->next = temp;
+    delete current;
+    cout << "Element Deleted" << endl;
+  }
+}
+void merge_sort()
+{
+  cout << "Merge sort" << endl;
 }
 void linkedlist::printval()
 {

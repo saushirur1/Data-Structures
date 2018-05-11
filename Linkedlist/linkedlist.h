@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+#include <vector>
 class linkedlist
 {
 private:
@@ -16,5 +18,7 @@ void Add_node(int toadd);
 bool searchval(int searchval);
 void deletenode(int del);
 void reverselist();
+void delete_atindex(int index);
+void merge_sort();
 void printval();
 };
