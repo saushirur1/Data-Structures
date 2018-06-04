@@ -1,5 +1,6 @@
 #include <iostream>
 #include "tree.h"
+#include <queue>
 using namespace std;
 tree::tree()
 {
@@ -91,4 +92,64 @@ void tree::postorder1(node* current1)
   print_allelements1(current1->left);
   print_allelements1(current1->right);
   cout << current1->data << endl;
+}
+bool tree::search(int search_element)
+{
+bool temp=tree::search1(root,search_element);
+return temp;
+}
+bool tree::search1(node* current,int search_element1)
+{
+  if(root==nullptr)
+  {
+    return false;
+  }
+  while(current!=nullptr)
+  {
+   if(current->data==search_element1)
+   {
+     return true;
+   }
+   else if(search_element1>current->data)
+   {
+     current=current->right;
+   }
+   else if(search_element1<current->data)
+   {
+    current=current->left;
+   }
+  }
+  return false;
+}
+bool tree::bfssearch(int search_element1)
+{
+ bool temp1=bfssearch1(root,search_element1);
+ return temp1;
+}
+bool tree::bfssearch1(node* current,int& search_element)
+{
+if(root==nullptr)
+{
+  return false;
+}
+queue<node*> q;
+q.push(root);
+while(!q.empty())
+{
+  node* temp=q.front();
+  if(temp->data==search_element)
+  {
+    return true;
+  }
+  if(temp->right!=nullptr)
+  {
+    q.push(temp->right);
+  }
+  if(temp->left!=nullptr)
+  {
+    q.push(temp->left);
+  }
+  q.pop();
+}
+return false;
 }
