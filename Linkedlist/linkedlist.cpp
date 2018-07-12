@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <map>
 #include "linkedlist.h"
 using namespace std;
 linkedlist::linkedlist()
@@ -26,6 +27,10 @@ void linkedlist::Add_node(int toadd)
     }
     current->next=newnode;
   }
+}
+bool linkedlist::gethead()
+{
+  return linkedlist::palindrome_linkedlistcheck(head);
 }
 bool linkedlist::searchval(int val_search)
 {
@@ -84,6 +89,30 @@ void linkedlist::delete_atindex(int index)
 void merge_sort()
 {
   cout << "Merge sort" << endl;
+}
+bool linkedlist::check_reverse(vector<int>& original)
+{
+int j=original.size()-1;
+for(int i=0;i<original.size()/2;i++)
+{
+  if(original[i]!=original[j])
+  {
+    return false;
+  }
+  j=j-1;
+}
+return true;
+}
+bool linkedlist::palindrome_linkedlistcheck(ll* temp)
+{
+vector<int> v;
+while(temp!=nullptr)
+{
+  v.push_back(temp->data);
+  temp=temp->next;
+}
+bool result=check_reverse(v);
+return result;
 }
 void linkedlist::printval()
 {
