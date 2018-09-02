@@ -100,9 +100,17 @@ string hashmap::searchdob(string name_tofind)
 void hashmap::Delete_entry(const string& name_todelete)
 {
 int indextodelete=Create_hash(name_todelete);
+cout << indextodelete << endl;
 hash* current=v[indextodelete];
 hash* current1;
-while(current->next!=nullptr)
+if(current->next==nullptr && current->name==name_todelete)
+{
+  current->name="Null";
+  current->dateofbirth="Null";
+}
+else
+{
+while(current!=nullptr)
 {
   if(current->name==name_todelete)
   {
@@ -114,5 +122,6 @@ while(current->next!=nullptr)
   }
   current1=current;
   current=current->next;
+}
 }
 }
