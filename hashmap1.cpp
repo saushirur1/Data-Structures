@@ -6,15 +6,17 @@
 using namespace std;
 hashmap::hashmap()
 {
-this->tablesize=2;
-(this->v).reserve(tablesize);
+this->tablesize=10;
+for(int i=0;i<tablesize;i++)
+{
+  v.push_back(nullptr);
+}
 for(int i=0;i<tablesize;i++)
 {
   v[i]=new hash;
   v[i]->name="Null";
   v[i]->dateofbirth="Null";
   v[i]->next=nullptr;
-  v.push_back(v[i]);
 }
 }
 int hashmap::Create_hash(string name)

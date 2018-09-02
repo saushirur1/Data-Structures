@@ -13,7 +13,7 @@ std::string name;
 std::string dateofbirth;
 hash* next;
 };
-std::vector<hash*> v ;
+std::vector<hash*> v;
 public:
 hashmap();
 int Create_hash(std::string name);
